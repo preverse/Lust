@@ -40,5 +40,10 @@ namespace Lust.Controllers
 
             return View();
         }
+
+        public void MakeItWork()
+        {
+            
+        }
     }
 }
