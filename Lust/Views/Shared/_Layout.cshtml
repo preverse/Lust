@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Peixabelha Ilustrações</title>
+    @*@Styles.Render("~/Content/css")
+        @Scripts.Render("~/bundles/modernizr")*@
+    <link href="~/Content/style.css" rel="stylesheet" />
+    <link href="~/Content/menu.css" rel="stylesheet" />
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <style type="text/css">
+        .test {
+            width: 145px;
+        }
+
+        body {
+            width: 1024px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+
+</head>
+<body>
+<div style="margin-top:10px">
+    <img src="~/Content/px.jpg" alt="Logo" height="118" width="118" style="float:left">
+    <h1 style="float: left; line-height: 120px">PEIXABELHA ILUSTRACOES</h1>
+</div>
+
+    <div class="navigationBar">
+        <div class="navBar">
+            <div id="MainMenu_menudiv" class="container">
+                <a class="toggleMenu" href="#" style="display: none;">Menu <img src="/images/menu-icon.png" alt="menu" align="right"></a>
+                <ul class="nav" style="display: block;">
+                    <li class="test">@Html.ActionLink("Inicio", "Index")</li>
+                    <li class="test">@Html.ActionLink("Quem somos", "About")</li>
+                    <li class="test">@Html.ActionLink("Produtos", "Product")</li>
+                    <li class="test">@Html.ActionLink("Astrologia", "Astro", new object { }, new { onclick = "javascript:return false;" })</li>
+                    <li class="test">@Html.ActionLink("Blog", "Blog", new object { }, new { onclick = "javascript:return false;" })@*<span class="horoscopeNew">New</span>*@</li>
+                    <li class="test">@Html.ActionLink("Contactos", "Contact")</li>
+                    <li style="float: right;" class="test">
+                        @Html.ActionLink("Encomendar", "Store", new object { }, new { @class = "storeButton" })
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div style="clear:both"></div>
+    <div>
+        <br />
+        @RenderBody()
+        @*<hr/>
+            <footer>
+                <p>&copy; @DateTime.Now.Year</p>
+            </footer>*@
+        <br />&nbsp;
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @*@Scripts.Render("~/bundles/bootstrap")*@
+    @RenderSection("scripts", required: false)
+</body>
+</html>
